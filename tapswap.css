@@ -1,0 +1,847 @@
+@import url(https://fonts.google.com/specimen/Raleway);
+@import url(https://fonts.google.com/specimen/Open+Sans);
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+*{box-sizing: border-box;}
+html{scroll-behavior: smooth;}
+:root {
+    /* Colors */
+    --white: #d0cfcf;
+    --text-light: #dfdcb9;
+    --extra-light: #faf5ff;
+    --ultramarine:hsl(217, 28%, 15%);
+    --ultramarine2: hsl(220, 28%, 28%);
+    --gold: #f0b92c;
+    --amber: #f7b900;
+    --deep-gold: #ffda06;
+    --silver: rgb(118, 118, 118);
+    --grey-color: rgba(135, 134, 134, 0.348);
+    --olive-green:#202e32;
+    --olive-green-light: #85937a;
+    --violet:#36244f;
+    --tapswap_content_container_width:380px;
+    --tapswap_content_container_height: 550px;
+   
+    /* Layout and dimensions */
+    --max-width: 1200px;
+}
+
+        body{
+            /* overflow: hidden; */
+            position: relative;
+        margin: 0;
+        padding: 0;
+    box-sizing: border-box;
+    background-color: var(--text-light);
+
+}
+
+
+/* Navigation bar code begins here. the html is in header.php */
+.nav_container{
+    width: 1200px;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    min-height: 70px;
+   /* border: 2px solid var(--violet); */
+
+  }
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:15px;
+  user-select: 
+  none;
+  }
+  .nav_logo{
+    width: 6.5rem;
+    margin: 0;
+    padding: 0 15px 0 0;
+border-bottom: 2px solid var(--amber);
+cursor: pointer;
+text-transform: uppercase;
+font-weight: 600;
+font-size: 1.4rem;
+user-select: none;
+
+
+}
+.nav_logo a{text-decoration: none;
+    color: var(--violet);
+}
+body .hamburger{
+  /* background-color: transparent;
+    margin: 0; */
+    display: none;
+    border-radius: 3px;
+    padding:.5rem;
+   cursor: pointer;
+   outline: 0;
+   transition: .2s ease-in-out all;
+   width: 45px;
+   box-shadow:2px 4px 8px rgba(0, 0, 0, 0.323);
+
+}
+
+#hamburger_btn:active{
+    transform: scale(0.8);
+}
+
+nav .nav_links{
+display: flex;
+padding: 0;
+list-style-type: none;
+}
+nav .nav_links a{ text-decoration: none;
+color: var(--violet);
+margin: 0 2rem;
+font-family: 'Raleway',sans-serif;
+font-size: 1.2rem;
+transition: 0.2s ease-in all;
+font-weight: 600;
+text-transform: capitalize;}
+nav .nav_links a:hover{
+border-bottom: 2px solid var(--amber);
+
+}
+/* animation for the nav links*/
+/* animation for the nav links*/
+/* animation for the nav links*/
+@keyframes nav_links_animation {
+    from{transform: translateY(-50px); opacity: 0;}
+    to{transform: translateY(0); opacity: 1;}
+    
+}
+@media screen and (max-width: 768px){
+    body{
+        box-sizing: border-box;
+        padding:0;
+       
+        }
+    nav{ position: relative;
+         margin-bottom: 0rem;
+         z-index: 10;}
+
+nav .nav_links{
+    display: none;
+text-align: center;
+    transition: 1s left ease-in-out;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    letter-spacing: 2px;
+    gap: 3rem 0;
+    height: 100%;
+  
+  
+}
+
+nav .nav_links a{margin-left: 1rem;}
+nav .hamburger{display: flex;
+}
+.nav_links.active_nav{display:flex;
+    animation:nav_links_animation ease-in .7s;
+}
+
+#container{  
+   margin: 1rem auto;
+}
+nav::before{
+    content:'';
+    position:absolute; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.133);
+    z-index: -1;}
+}
+
+
+
+#container
+{position: relative;
+       user-select: none;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       flex-direction: column;
+    margin: 2rem auto;
+    padding: 1rem 0;
+    max-width: 100%;
+    overflow:hidden;
+     width: var(--tapswap_content_container_width); 
+    height: var(--tapswap_content_container_height);
+    /* border: 1px groove var(--amber); */
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.323);
+box-sizing: border-box;
+background-image: linear-gradient(to left,var(--ultramarine), var(--ultramarine2),var(--ultramarine));
+border-radius: 5px;
+}
+
+/* tapswap.php styling begins here*/
+/* tapswap.php styling begins here*/
+/* tapswap.php styling begins here*/
+/* tapswap.php styling begins here*/
+/* tapswap.php styling begins here*/
+/* tapswap.php styling begins here*/
+/* tapswap.php styling begins here*/
+/* tapswap.php styling begins here*/
+.contents_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    /* background-color:var(--ultramarine2); */
+    height: 85%;
+    width: 100%;
+    /* border-bottom: 2px solid silver; */
+    display: none;
+  padding: 1rem 2rem;
+/*margin: 0; */
+}
+.contents_container.active{display: flex;
+    animation:moving_in ease-in .4s;}
+
+@keyframes moving_in {
+    from{transform: translateX(-10px); opacity: 0;}
+    to{transform: translateX(0); opacity: 1;}
+    
+}
+#container .contents_container.ref_container{
+color: #ffffff;
+width: 100%;
+padding-bottom: 1rem;}
+#container .ref_container h2{
+    font-size: 2.2rem;
+}
+#container .ref_container p{
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+#invite_div{
+    width: 90%;
+   padding: 10px;
+   box-shadow:2px 4px 8px  rgba(0, 0, 0, 0.323);
+
+   /* border-bottom: 2px solid var(--white); */
+}
+#invite_div .invite_link_title{
+float: left;
+margin-top: 0;
+}
+.ref_container .invite_btn {
+   background-color: purple;
+   padding:  8px 18px;
+   border: none;
+   outline: none;
+   border-radius: 30px;
+   color: var(--white);
+   font-weight: bolder;
+   cursor:pointer;
+   float: right;
+   box-shadow:2px 4px 8px #181818d6;
+   background-image: linear-gradient(to bottom, #2c0232,#313030d8);
+   
+}
+.ref_container .my_referals{
+  
+    float: left;
+    width: 90%;
+    padding: 0 10px 20px 10px;
+
+}
+.ref_container .referalnotes{
+font-size: 14px;
+font-weight: 800;
+
+}
+
+.total_balance_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+gap: 0 10px;}
+.figure_div h2{
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--white);
+}
+.figure_div{
+width: 100%;
+text-align: center;
+
+}
+.figure_div span{font-weight: 800;
+font-size: 12px;
+font-family: sans-serif;
+color:var(--silver) ;}
+.figure_div .integer{color: var(--white);
+font-size: 1.5rem;
+font-weight: 600;
+margin: 0;}
+.contents_container .line{
+    height: 2px;
+width: 100%;
+background-color: var(--grey_color);
+}
+
+/* styling for Boost container  in tapswap.php begins */
+.contents_container .boost_container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    }
+
+.contents_container .boost_container_child{
+    /* border: 2px solid  yellow; */
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.323);
+    width:130px ;
+    height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   text-align: left;
+   gap: 0 5px;
+    margin-top: 10px;
+}
+.contents_container .boost_container_child span{  color: var(--white);  
+    
+}
+.contents_container .boost_container_child:hover{
+    border: 1px solid var(--amber);
+    cursor: pointer;
+}
+.boosters_parapgraph{
+text-align: left;
+font-size: 16px;
+color: var(--white);
+margin-bottom: -1rem;
+font-weight: 600;
+}
+
+
+
+.figure_div .boosters_container{
+    /* border: 2px solid yellow; */
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.323);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    margin:0;
+    margin-bottom:.4rem;
+    cursor:pointer;
+}
+.figure_div .boosters_container div{
+    font-weight: 600;
+   color: var(--white);   
+  
+}
+.booster_figure_div {
+    height: 150px;
+    background-color: #4341412d;
+    padding:10px 0;
+    overflow-y:auto;
+    border-radius: 5px;
+    margin-bottom: -30px; 
+    /* border: 2px solid#055; */
+
+}
+
+.booster_figure_div .boost_container {box-shadow:2px 4px 8px rgba(0, 0, 0, 0.323);}
+.booster_figure_div .boosters_container:hover{    border: 1px solid var(--amber);}
+.booster_figure_div::-webkit-scrollbar {
+    width:2px; /* Make the scrollbar thin */
+}
+.booster_figure_div::-webkit-scrollbar-thumb {
+    background-color: rgba(110, 109, 109, 0.718);
+    border-radius: 5px;
+}
+/* styling for task container  in tapswap.php begins here*/
+
+#book_content h2{
+    margin: 0px;
+    color: white;
+}
+#book_content  p{
+    color: var(--silver);
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+#book_content p::first-letter{
+    font-size: 25px;   
+}
+#number_score{
+    /* text-align: center; */  
+    font-family: 'open sans', sans-serif;
+font-weight: 400;
+color: antiquewhite;
+font-size: 3rem; 
+}
+#heirachy{display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    text-align: center;
+    margin-top: -30px;
+    padding: 0;
+    color: rgba(158, 158, 158, 0.673);
+    font-size: 1.1em;
+    font-weight: 800;
+    /* border: 1px solid yellow; */
+}
+#tapswap_icon,#counter_div{
+    margin-bottom:-20px;
+}
+.contents_container #tapswap_icon{
+
+box-sizing: border-box;
+border-radius: 50%;
+width: 9.5rem;
+height: 12rem;
+padding: 0;
+margin: 0;
+margin-bottom: -30px;
+transition:  1s ease-out scale;
+/* background-color: #f0b92c !important; */
+}
+#tapswap_icon img{
+    margin: 0 auto;
+    padding: 0;
+width:100%;
+height: 100%;
+
+/* transform: scale(0.8); */
+cursor: pointer;
+border-radius:30%;
+/* border: 2px solid white; */
+
+}
+#tapswap_icon:active{
+transform:scale(0.96);
+}
+
+#counter_div{ 
+font-weight: 400;
+color: antiquewhite;
+font-size: 18px;
+font-weight: bolder;}
+#progress_bar{
+width: 100%;
+height: 1.1em;
+border-radius: 15px;
+background-color: transparent;
+border: 1px solid var(--silver);}
+.progress{
+width:0;
+height: 100%;
+padding: 0;
+margin: 0;
+border-radius: 12px;
+/* background-color: var(--deep-gold); */
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fceabb+0,fccd4d+50,f8b500+51,fbdf93+100;Orange+3D+%235 */
+background: linear-gradient(to bottom,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+#footer{
+    height: 3.6em;
+    width:100%;
+    display: flex;
+    /* background-color: #055; */
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+#footer .options{
+    border-radius:7px;
+    height: 100%;
+    cursor: pointer;
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.323);
+transition: ease all 0.5s;
+text-align: center;
+
+width: 3.4em;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+margin: 0;
+padding: 0;
+}
+#footer .options span {
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    font-weight:bold;
+letter-spacing: 0px;
+font-family: 'open sans', sans-serif;}
+
+.tab_btn.active{ 
+    border: 1px solid var(--amber);
+    background-image: linear-gradient(to bottom,var(--ultramarine),var(--ultramarine2));}
+
+#watermark{
+    color: rgba(186, 186, 186, 0.121);
+font-family:  monospace;
+letter-spacing: 0px;
+position: absolute;
+bottom:-8px ;
+right: 25px;}
+
+/* styling for login.php begins here. */
+/* styling for login.php begins here. */
+/* styling for login.php begins here. */
+/* styling for login.php begins here. */
+
+/* Container styles  in the login.php*/
+#heroPageSection_container {
+/*  */
+    max-width: var(--max-width);
+    margin: 0rem auto;
+    padding: 1rem;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 4rem;
+
+ 
+   
+}
+
+#heroPageSection_container .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+#heroPageSection_container .subtitle {
+    letter-spacing: 2px;
+    color: var(--amber);
+    font-weight: 600;
+    margin-bottom: 1.4rem;
+    font-size: 3rem;
+}
+
+#heroPageSection_container .title {
+    font-size: 2.5rem;
+    font-weight: 400;
+  color: var(--violet);
+    margin-bottom: 1rem;
+
+}
+
+#heroPageSection_container .title span {
+    font-weight: 600;
+    font-family: 'PP Editorial new';
+    /* font-size: larger; */
+   
+}
+
+#heroPageSection_container .description {
+    line-height: 2rem;
+    color: var(--violet);
+    font-size: 1.3rem;
+    font-family: raleway;
+    margin-bottom: 2rem;
+    animation: moving .5s ease-in;
+}
+
+@keyframes moving {
+    from {
+        transform: translate(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes movein_from_top {
+    from {
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+#heroPageSection_container.tapswap_hero {
+    display: grid;
+    place-items: center;
+    animation: movein_from_top .5s ease-in;
+    /* border: 2px solid var(--deep_gold); */
+}
+
+#heroPageSection_container .link_to_log_in {
+    text-decoration: none;
+}
+
+#heroPageSection_container .link_to_log_in:visited {
+    color: var(--ultramarine);
+}
+
+#heroPageSection_container .tapswap_hero img {
+    width: min(25rem, 90%);
+    height: 400px;
+    /* border: 1px solid red; */
+}
+
+#heroPageSection_container {
+    user-select: none;
+    width: 100%;
+    /* min-height: 100vh; */
+    max-width: var(--max-width);
+    margin: 0 auto;
+    /* border: 2px solid var(--olive-green); */
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 4rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+/* hero styling*/
+#heroPageSection_container .tapswap_hero {
+    display: grid;
+    place-items: center;
+    width: 100%; 
+
+}
+
+#heroPageSection_container .tapswap_hero img {
+    width: 100%;
+    max-width: 380px;
+    animation: rotating_hero_image 30s linear infinite;
+}
+#heroPageSection_container   button {
+    font-size: 1.1rem;
+    align-self: center;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 0.8rem 1.3rem;
+    border:none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--gold);
+    transition: 0.3s;
+    text-transform: uppercase;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.323);
+    color: var(--violet);
+}
+
+#heroPageSection_container    button:hover {
+    background-color: var(--violet);
+    color:var(--gold) !important;
+}
+
+#heroPageSection_container button:hover a {
+
+    text-decoration: none;
+}
+
+#heroPageSection_container  button a {
+    color: var(--violet);}
+@keyframes rotating_hero_image {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Form styles */
+.logInPageSection_container .form_div {
+    height: 500px;
+    box-shadow: var(--box-shadow);
+   
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin: 0;
+    justify-content: space-evenly !important;
+}
+
+.logInPageSection_container .form {
+    /* border:2px solid purple; */
+    display: none;
+   width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 0 1rem;
+
+    justify-content: space-evenly !important;
+    animation: moving .5s ease-in;
+}
+
+.logInPageSection_container .form.active {
+    display: flex;
+}
+
+.logInPageSection_container .form h1 {
+    text-decoration: underline;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--ultramarine);
+    margin: 0;
+    padding: 0;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+}
+
+.logInPageSection_container .form label {
+    display: none;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--olive-green);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.logInPageSection_container .input input {
+    padding: 0 20px;
+    height: 40px;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.323);
+    outline: none;
+    background: none;
+}
+
+.logInPageSection_container .input p {
+    display: none;
+}
+
+.logInPageSection_container .check {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+
+.logInPageSection_container .check span,
+.logInPageSection_container .check p {
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--olive-green);
+    text-align: center;
+}
+.logInPageSection_container .click_here,.terms {
+    color: #a70101e7 !important;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.logInPageSection_container .click_here:hover {
+    text-decoration: underline;
+}
+
+
+.logInPageSection_container  .click_here{
+font-weight: 600;
+cursor: pointer;
+text-transform: capitalize;
+}
+/* Additional responsive styles */
+@media screen and (max-width: 768px) {
+
+    #heroPageSection_container {
+        gap: 2rem;
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    #heroPageSection_container .tapswap_hero{
+        transform: scale(0.9) !important;}
+    #heroPageSection_container .tapswap_hero img {
+
+        transform: rotate(30deg);
+        order: -1;
+
+    }
+    #heroPageSection_container  .action_btn {
+align-items: center;
+justify-content: center;
+display: flex;
+margin-bottom: 2rem;}
+
+#heroPageSection_container .title span{
+line-height: 0;
+margin: 0;
+/* line-height: 4; */
+    /* color: var(--amber); */
+}
+#heroPageSection_container .subtitle{
+    /* border: 2px solid red; */
+margin-bottom: 0;}
+#heroPageSection_container .description{
+    margin-top: 0;
+    
+    
+}
+
+
+
+    .logInPageSection_container {
+        margin: 1rem auto;
+        padding: 1rem 1.2rem;
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+
+    .logInPageSection_container button {
+        font-size: 0.9rem;
+        letter-spacing: 0;
+        padding: 0.8rem;
+        text-transform: capitalize;
+    }
+
+    .logInPageSection_container .tapswap_hero {
+        display: none;
+    }
+
+    .logInPageSection_container .form label {
+        display: none;
+    }
+}
+
+/* Animation */
+@keyframes moving {
+    from {
+        transform: translate(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+
